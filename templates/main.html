@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock head %}
+
+{% block body %}
+
+<div id="map-canvas"></div>      
+
+<div class="loading-modal"></div>
+
+<!-- ok, so this loads require.js, and the data-main attribute tells require.js
+to start looking in static/js/app.js, I think. the baseUrl is set as static/js. -->
+<script data-main="static/js/app" src="{{ url_for('static', filename='js/libs/requirejs/require.js') }}"></script>
+{% endblock body %}
